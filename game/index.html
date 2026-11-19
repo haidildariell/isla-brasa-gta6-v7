@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISLA BRASA — Brasa Bay</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+</head>
+<body>
+<canvas id="game-canvas"></canvas>
+<div id="vignette"></div>
+<div id="crosshair">+</div>
+
+<div id="mission-panel" class="panel">
+  <div id="job-kicker">JOB 1/10</div>
+  <div id="job-name">First Wheels</div>
+  <div id="job-obj"></div>
+  <div id="job-pips"></div>
+  <div id="job-next"></div>
+  <div id="job-timer"></div>
+</div>
+
+<div id="dispatch-panel" class="panel">
+  <div id="dispatch-title">BBPD DISPATCH — 0 UNITS</div>
+  <div id="dispatch-list"></div>
+  <div id="dispatch-note"></div>
+</div>
+
+<div id="top-right">
+  <div id="cash">$0</div>
+  <div id="stars">☆☆☆☆☆</div>
+  <div><span id="airtag">AIR UNIT DEPLOYED</span></div>
+  <div id="clock">17:36</div>
+  <div id="busted-wrap"><span>BUSTED</span><div id="busted-bar"><div id="busted-fill"></div></div></div>
+</div>
+
+<div id="weapon-bar"></div>
+<div id="ammo-big"></div>
+<div id="crew-chips"></div>
+
+<div id="rank-wrap">
+  <div id="rank-label">RANK 1 — DOCK HAND</div>
+  <div id="rank-bar"><div id="rank-fill"></div></div>
+  <div id="rank-rp">0 RP</div>
+</div>
+<div id="vitals">
+  <div class="vlabel">HEALTH</div>
+  <div class="vbar"><div id="hp-fill"></div></div>
+  <div class="vlabel">ARMOUR</div>
+  <div class="vbar"><div id="ar-fill"></div></div>
+</div>
+<div id="minimap-wrap"><canvas id="minimap" width="170" height="170"></canvas></div>
+
+<div id="district-banner">
+  <div id="district-name">MARINA DISTRICT</div>
+  <div id="district-standing"></div>
+  <div id="district-bar"><div id="district-fill"></div></div>
+</div>
+
+<div id="speedo">
+  <div id="hotwire">HOTWIRING…</div>
+  <div><span id="speed-num">0</span> <span id="speed-unit">KM/H</span></div>
+  <div id="speed-name"></div>
+  <div id="speed-cond"></div>
+</div>
+
+<div id="race-banner"><div id="race-pos">P4/4</div><div id="race-cp"></div></div>
+<div id="toast"></div>
+<div id="radio-toast"><div id="radio-station"></div><div id="radio-track"></div></div>
+<div id="dialog"><div id="dlg-avatar">VQ</div><div><div id="dlg-name"></div><div id="dlg-role"></div><div id="dlg-line"></div></div></div>
+<div id="prompt"></div>
+<div id="wheel"></div>
+
+<div id="garage-panel" class="panel">
+  <h3>SAFEHOUSE GARAGE — MARINA</h3>
+  <div id="garage-list"></div>
+  <h4>UPGRADES (BUY WITH NUMBER KEYS)</h4>
+  <div id="garage-upgrades"></div>
+</div>
+
+<div id="title-screen" class="screen">
+  <h1>ISLA <span>BRASA</span></h1>
+  <div class="sub">Brasa Bay, golden hour. Dario Venn drove getaway for the wrong people and owes the bay a fortune. Handler Vera Quintana offers a way out: ten jobs, one crown — the Brasa Bay Bank. Outrun the BBPD, outshoot Los Corales, and sail out rich.</div>
+  <div>
+    <button class="btn" id="btn-start">START — NEW GAME</button>
+    <button class="btn alt" id="btn-continue">CONTINUE</button>
+  </div>
+  <div class="controls">WASD drive / walk · Mouse look · E enter car · F job / shop / garage · Click shoot · Q weapon wheel · 1/2/3 crew · R race · Tab radio · Shift sprint · Esc pause</div>
+</div>
+
+<div id="pause-screen" class="screen hidden">
+  <h1>PAUSED</h1>
+  <div class="sub">Brasa Bay waits for no one — except you, right now.</div>
+  <div>
+    <button class="btn" id="btn-resume">RESUME</button>
+    <button class="btn alt" id="btn-restart">BACK TO TITLE</button>
+  </div>
+  <div class="controls">Jobs done, cash, rank and garage are saved to this browser automatically.</div>
+</div>
+
+<script type="module" src="js/game.js"></script>
+</body>
+</html>
